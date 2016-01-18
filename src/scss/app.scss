@@ -59,10 +59,22 @@ VHS STYLES
 */
 main {
     background-color: #141414;
-    // background-image: linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.4) 50%), linear-gradient(90deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.06) 50%);
     background-image: linear-gradient(rgba(255, 255, 255, 0.04) 50%, rgb(0, 0, 0) 50%);
     background-size: 10px;
-
+    &:before {
+        content: "";
+        z-index: 1;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-image: url("../img/noise.png");
+        opacity: 0.35;
+        background-size: 472px;
+        background-position: center;
+    }
 }
 
 h1 {
@@ -99,6 +111,30 @@ button {
     position: absolute;
     bottom: 33vh;
 }
+
+.av {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    line-height: 1;
+    color: lime;
+    opacity: 0.5;
+    font-family: Arial;
+    font-weight: 700;
+    font-size: 100px;
+}
+
+// .vignette {
+//     display: block;
+//     // background: red;
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     left: 0;
+//     bottom: 0;
+//     z-index: 0;
+//     background-image: radial-gradient(white, black);
+// }
 
 /**
 TYPOGRAPHY
@@ -165,6 +201,39 @@ ANIMATIONS
     animation: turnoff 400ms;
     animation-fill-mode: forwards;
     animation-timing-function: $ease-in-quart;
+}
+
+.a-noise:before {
+    animation: noise 0.2s steps(5) infinite;
+}
+
+.a-av-blinkout {
+    animation: avblinkout 5s steps(1);
+    animation-fill-mode: forwards;
+}
+
+@keyframes(avblinkout) {
+    0%, 40%, 70%, 90% {
+        opacity: 0.5;
+    }
+    60%, 80%, 100% {
+        opacity: 0;
+    }
+}
+
+@keyframes(noise) {
+    0% {
+        background-position: -2px 4px;
+    }
+    25% {
+        background-position: 123px 2px;
+    }
+    50% {
+        background-position: 12px 3px;
+    }
+    75% {
+        background-position: 2px 6px;
+    }
 }
 
 @keyframes(turnoff) {
