@@ -6,8 +6,7 @@
     <h1 id="mainTitle" class="a-textjump a-vertjump" data-content="Max Barry"></h1>
     <button id="off">Off</button>
 
-
-
+    {#
     Put each stage on a button in the bottom left "VHS" "Order (written in russian)" "Vice" "The power off icon"
     Put mxbry.com link once you turn it off
     Put "AV" green channel in top left
@@ -30,6 +29,45 @@
 
     Change the channel (multiple programs?) then you get to AV1
 
+    Filthy noise {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    /* background-color: #131313; */
+    background-image: url(http://api.thumbr.it/whitenoise-300x300.png?background=1f1f1f00&noise=626262&density=35&opacity=34);
+    /* background-blend-mode: multiply; */
+    opacity: 0.4;
+    display: non;
+    /* visibility: hidden; */
+    background-size: 472px;
+    background-position: center;
+
+    MAYBE BRING THE OPACITY A HAIR DOWN
+
+    animation: noise-displacement 0.2s steps(5) infinite;
+    }
+
+    @keyframes noise-displacement {
+      0% {
+        background-position: -2px 4px;
+      }
+      25% {
+        background-position: 123px 2px;
+      }
+      50% {
+        background-position: 12px 3px;
+      }
+      75% {
+        background-position: 2px 6px;
+      }
+    }
+
+
+    #}
 </main>
 
 {% endblock %}
