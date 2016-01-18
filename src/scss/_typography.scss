@@ -1,0 +1,115 @@
+$default-line-height: 1.4;
+$body-font-size: $em-base;
+
+$blh: round($body-font-size * $default-line-height);
+
+$scale-factor: 1.618; // Golden Ratio
+$h1-multip: 3;
+$h2-multip: 2;
+$h3-multip: 1;
+$h4-multip: 0;
+
+
+@function calculate_fontsize($fs, $sf, $multip) {
+    /**
+    @link http://www.gridlover.net/
+    @return fontsize {integer} Size of font
+    Calculation for fontsize based off of Gridlover.net calculation
+    of base font size * (scale factor ^ heading multiplier)
+    */
+    @return round($fs * power($sf, $multip));
+}
+
+@function calculate_lineheight($baselh, $multip, $fs, $sf) {
+    /**
+    @param $baselh {integer} Value of baseline-height. Accepted as param in case modified
+    @param $multip {integer} Multiplier associated with this heading
+    @param $fs {integer} Body font size. Accepted as param in case modified
+    @param $sf {integer} Scale factor. Accepted as param in case modified
+    @return lineheight {integer} Line height
+    */
+    $fs-tmp: calculate_fontsize($fs, $sf, $multip);
+    $mt-tmp: if($multip == 0, 1, $multip);
+    $lh-tmp: $baselh * $mt-tmp;
+    /**
+    If the calculated line height is not greater than the font-size (e.g. 20px line-height for 26px font-size),
+    then the multiplier is incremented and the line-height recalculated.
+    */
+    @return if($lh-tmp > $fs-tmp, $lh-tmp, $baselh * ($mt-tmp + 1));
+}
+
+/**
+@link http://www.gridlover.net/
+@link http://webdesign.tutsplus.com/articles/improving-layout-with-vertical-rhythm--webdesign-14070
+*/
+
+html {
+    font-size: $body-font-size;
+}
+
+body {
+    line-height: $blh;
+    font-family: $base-font-family;
+}
+
+h1 {
+    font-size: calculate_fontsize($body-font-size, $scale-factor, $h1-multip);
+    font-family: $heavy-font-family;
+    line-height: calculate_lineheight($blh, $h1-multip, $body-font-size, $scale-factor);
+    margin-top: $blh * 2;
+    margin-bottom: $blh;
+}
+
+h2 {
+    font-size: calculate_fontsize($body-font-size, $scale-factor, $h2-multip);
+    font-size: round($body-font-size * power($scale-factor, $h2-multip));
+    font-family: $heavy-font-family;
+    line-height: calculate_lineheight($blh, $h2-multip, $body-font-size, $scale-factor);
+    margin-top: $blh * 2;
+    margin-bottom: $blh;
+}
+
+h3 {
+    font-size: calculate_fontsize($body-font-size, $scale-factor, $h3-multip);
+    font-family: $heavy-font-family;
+    line-height: calculate_lineheight($blh, $h3-multip, $body-font-size, $scale-factor);
+    margin-top: $blh;
+    margin-bottom: $blh;
+}
+
+h4 {
+    font-size: calculate_fontsize($body-font-size, $scale-factor, $h4-multip);
+    font-family: $heavy-font-family;
+    line-height: calculate_lineheight($blh, $h4-multip, $body-font-size, $scale-factor);
+    margin-top: $blh;
+    margin-bottom: $blh;
+}
+
+p, ul, ol, pre, table, blockquote {
+    margin-top: $blh;
+    margin-bottom: $blh;
+}
+
+hr {
+    border: 1px solid;
+    margin: -1px 0;
+}
+
+ul ul, ol ol, ul ol, ol ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+b, strong, em, small, code {
+    line-height: 1;
+}
+
+sup, sub {
+    vertical-align: baseline;
+    position: relative;
+    top: -0.4em;
+}
+
+sub {
+    top: 0.4em;
+}

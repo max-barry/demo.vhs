@@ -1,0 +1,35 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+
+<main id="mainWrap" class="a-scanlines">
+    <h1 id="mainTitle" class="a-textjump a-vertjump" data-content="Max Barry"></h1>
+    <button id="off">Off</button>
+
+
+
+    Put each stage on a button in the bottom left "VHS" "Order (written in russian)" "Vice" "The power off icon"
+    Put mxbry.com link once you turn it off
+    Put "AV" green channel in top left
+
+
+    AV1 {
+    color: lime;
+    opacity: 0.5;
+    font-family: Arial;
+    font-weight: bold;
+    margin: 0;
+    font-size: 190px;
+    z-index: 10;
+    letter-spacing: -10px;
+    }
+
+    AV1 animation: solid 2s, blink 2s, off
+
+</main>
+
+{% endblock %}
+
+{% block extrajs %}
+<!-- Template specific <script> tags should go here -->
+{% endblock %}

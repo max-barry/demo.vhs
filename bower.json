@@ -1,0 +1,11 @@
+{
+  "name": "vhs",
+  "version": "0.0.1",
+  "private": "true",
+  "dependencies": {
+    "bourbon": "^4.0.1",
+    "Scut": "scut#^1.2.1",
+    "reset-scss": "*",
+    "csshake": "*"
+  }
+}
