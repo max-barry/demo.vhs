@@ -109,7 +109,24 @@ h1 {
 
 button {
     position: absolute;
-    bottom: 33vh;
+    bottom: 2*$blh;
+    left: 2*$blh;
+    z-index: 2;
+    outline: 0;
+    border: 1px solid green;
+    border-radius: 3px;
+    background-color: transparent;
+    color: white;
+    padding: 10px 20px;
+    min-width: 120px;
+    text-transform: uppercase;
+    font-family: Courier New;
+    font-weight: 600;
+    cursor: pointer;
+    &:last-of-type {
+        left: 4*$blh;
+        transform: translateX(100%);
+    }
 }
 
 .av {
@@ -148,23 +165,23 @@ TYPOGRAPHY
         text-shadow: 4px 0px 3px rgb(255, 0, 0);
     }
 }
-.t-violent main {
-    h1 {
-        animation: colorcycle 15s steps(3) infinite, shake-hard 80ms linear infinite !important;
-        font-family: "againtsregular", $base-font-family;
-        text-shadow: none;
-        font-size: 80px;
-        line-height: 0.9;
-        letter-spacing: 5px;
-        opacity: 1;
-        &:before, &:after {
-            -webkit-clip-path: none;
-            clip-path: none;
-            animation: none;
-            white-space: normal;
-        }
-    }
-}
+// .t-violent main {
+//     h1 {
+//         animation: colorcycle 15s steps(3) infinite, shake-hard 80ms linear infinite !important;
+//         font-family: "againtsregular", $base-font-family;
+//         text-shadow: none;
+//         font-size: 80px;
+//         line-height: 0.9;
+//         letter-spacing: 5px;
+//         opacity: 1;
+//         &:before, &:after {
+//             -webkit-clip-path: none;
+//             clip-path: none;
+//             animation: none;
+//             white-space: normal;
+//         }
+//     }
+// }
 
 /**
 ANIMATIONS

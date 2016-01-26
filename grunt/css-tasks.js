@@ -29,7 +29,7 @@ module.exports = {
         files: [{
             expand: true,
             cwd: "<%= package.build.css %>",
-            src: "**/*.css",
+            src: ["**/*.css", "!fonts.css", ],
             dest: "<%= package.build.css %>"
         }]
     },

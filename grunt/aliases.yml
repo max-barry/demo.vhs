@@ -31,7 +31,6 @@ deploy:
   description: "Deploy the build to a Surge.sh server"
   tasks:
     - "dist"
-    - "htmllint"
     - "cacheBust"
     - "surge"
 
