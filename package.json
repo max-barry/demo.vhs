@@ -2,7 +2,7 @@
     "name": "vhs",
     "title": "vhs",
     "description": "",
-    "version": "0.0.1gi",
+    "version": "0.0.2",
     "keywords": [],
     "devDependencies": {
         "autoprefixer": "^6.2.0",
