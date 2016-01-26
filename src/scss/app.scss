@@ -123,9 +123,13 @@ button {
     font-family: Courier New;
     font-weight: 600;
     cursor: pointer;
-    &:last-of-type {
+    &:nth-of-type(2) {
         left: 4*$blh;
         transform: translateX(100%);
+    }
+    &:last-of-type {
+        left: 5*$blh;
+        transform: translateX(200%);
     }
 }
 

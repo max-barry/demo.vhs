@@ -2,6 +2,7 @@ var $h1 = document.getElementById("mainTitle"),
     $main = document.getElementById("mainWrap"),
     $buttonOff = document.getElementById("off"),
     $buttonStyle = document.getElementById("style"),
+    $buttonPort = document.getElementById("portfolio"),
     animClass = "a-textjump";
 
 // ------------
@@ -23,6 +24,11 @@ var turnOff = function() {
 };
 
 $buttonOff.addEventListener("click", turnOff);
+
+
+$buttonPort.addEventListener("click", function(){
+    window.open("https://mxbry.com", "_blank");
+});
 
 // ------------
 // Change style
@@ -63,10 +69,12 @@ var timeoutNav = function(){
 
     $buttonOff.style.display = "block";
     $buttonStyle.style.display = "block";
+    $buttonPort.style.display = "block";
     
     mouseMoving = setTimeout(function() {
         $buttonOff.style.display = "none";
         $buttonStyle.style.display = "none";
+        $buttonPort.style.display = "none";
     }, 3000);
 
 };
